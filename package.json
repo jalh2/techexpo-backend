@@ -3,17 +3,22 @@
   "version": "1.0.0",
   "description": "",
   "main": "dist/server.js",
+  "engines": {
+    "node": ">=14.0.0"
+  },
   "scripts": {
     "build": "tsc",
-    "start": "ts-node server.ts",
-    "dev": "nodemon server.ts",
-    "test": "jest"
+    "start": "node dist/server.js",
+    "dev": "nodemon --exec ts-node server.ts",
+    "test": "jest",
+    "postinstall": "npm run build"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.20.8",
     "axios": "^1.9.0",
     "cors": "^2.8.5",
     "dotenv": "^16.5.0",
@@ -28,7 +33,6 @@
     "@types/node": "^20.12.12",
     "nodemon": "^3.1.10",
     "ts-node": "^10.9.2",
-    "typescript": "^5.4.5",
-    "@anthropic-ai/sdk": "^0.20.8"
+    "typescript": "^5.4.5"
   }
 }
